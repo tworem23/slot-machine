@@ -4,46 +4,53 @@ let slot1 = randomInt();
 let slot2 = randomInt();
 let slot3 = randomInt();
 // declare a message 
-let msg;
-let spinBtn;
+let spinBtn = document.querySelector('button');
 
 console.log(slot1, slot2, slot3);
-// cached elements
-// the three slots will be assigned to my bubbles on the web browser
-function render() {
-    document.getElementById('slot1').innerText = slot1;
-    document.getElementById('slot2').innerText = slot2;
-    document.getElementById('slot3').innerText = slot3;
-}
 
-render();
 // assign message element 
-document.querySelector('h4').innerText = msg;
+// document.querySelector('h4').innerText = msg;
 
 //assign button element
-spinBtn = document.querySelector('button')
+spinBtn =
 
 // assign each int to a img/symbol
 
-
 // event listener
+spinBtn.addEventListener('click', spin);
 //click the spin button to play again 
 function spin() {
-spinBtn.addEventListener('click', init())
-render();
+    slot1 = randomInt();
+    slot2 = randomInt();
+    slot3 = randomInt();
+    checkWinner();
+    render();
 }
-// functions
-// when you get three matching symbols the message will read Winner!
-function checkWinner() {
-    if (slot1 === slot2 === slot3) {
-        console.log('Winner!')
-// when you don't have three matching symbols the message will read Spin Again!
-    } else {
-        console.log('Spin Again!')
-    }
-}  
+
 // declare random int for slot variables 
 function randomInt() {
-return Math.ceil(Math.random(1) * 3)
+    return Math.ceil(Math.random(1) * 3)
+    // console.log(randomInt())
 }
-console.log(randomInt())
+
+function render() {
+    // the three slots will be assigned to my bubbles on the web browser
+    document.getElementById('slot1').innerText = slot1;
+    document.getElementById('slot2').innerText = slot2;
+    document.getElementById('slot3').innerText = slot3;
+    checkWinner();
+}
+
+function checkWinner() {
+    // when you get three matching symbols the message will read Winner!
+    if (slot1 === slot2 === slot3) {
+        return document.querySelector('h4').innerText = 'Winner!';
+        console.log('Winner!')
+
+        // when you don't have three matching symbols the message will read Spin Again!
+    } else {
+        return document.querySelector('h4').innerText = 'Spin Again!';
+        console.log('Spin Again!')
+    }
+}
+// render();
