@@ -53,5 +53,3 @@ function message() {
 
 
 // git test4 for css commit
-
-//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
