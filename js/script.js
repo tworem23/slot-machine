@@ -50,6 +50,3 @@ function message() {
     }
 }
 
-
-
-// git test4 for css commit
