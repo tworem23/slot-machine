@@ -29,7 +29,6 @@ function spin() {
 // declare random int for slot variables 
 function randomInt() {
     return Math.ceil(Math.random(1) * 3)
-    // console.log(randomInt())
 }
 
 // assigns the random states and message to the DOM 
@@ -45,12 +44,9 @@ function message() {
     // when you get three matching symbols the message will read "Winner!"
     if (slot1 === slot2 && slot2 === slot3) {
         document.querySelector('h4').innerText = 'Winner!';
-        console.log('Winner!')
-
     // when three symbols don't match the message will read "Spin Again!"
     } else {
         document.querySelector('h4').innerText = 'Spin Again!';
-        console.log('Spin Again!')
     }
 }
 

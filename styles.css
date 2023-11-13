@@ -1,3 +1,38 @@
 * {
     box-sizing: border-box;
 }
+
+body {
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: grey;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+h4 {
+    text-align: center;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: darkblue;
+}
+
+div {
+    background-color: darkgrey;
+    margin: 6%;
+    padding: 7%;
+}
