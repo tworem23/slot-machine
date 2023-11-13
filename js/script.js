@@ -8,6 +8,7 @@ let slot3 = randomInt();
 let spinBtn = document.querySelector('button');
 
 /*-----cached elements----*/
+let msg = document.querySelector('h4').innerText = 'Spin!';
 // assign each int to a img/symbol
 
 
@@ -44,11 +45,8 @@ function message() {
     // when you get three matching symbols the message will read "Winner!"
     if (slot1 === slot2 && slot2 === slot3) {
         document.querySelector('h4').innerText = 'Winner!';
-    // when three symbols don't match the message will read "Spin Again!"
+        // when three symbols don't match the message will read "Spin Again!"
     } else {
         document.querySelector('h4').innerText = 'Spin Again!';
     }
 }
-
-
-
