@@ -6,21 +6,24 @@ body {
     display: grid;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     height: 100vh;
+    margin: 0;  
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: grey;
+    color: whitesmoke;
 }
 
 h1 {
     text-align: center;
     margin-bottom: 2%;
-    margin-top: 2%;
+    margin-top: 0.2%;
 }
 
 h4 {
     text-align: center;
     margin-bottom: 2%;
-    margin-top: 2%;
+    margin-top: 0.2%;
+    font-size: x-large;
 }
 
 section {
@@ -29,10 +32,29 @@ section {
     justify-content: center;
     align-items: center;
     background-color: darkblue;
+    border-radius: 35px;
+    width: 150vh;
+
 }
 
 div {
     background-color: darkgrey;
+    height: 30vh;
+    width: 25vh;
     margin: 6%;
     padding: 7%;
+    border-radius: 12%;
+    text-align: center;
+    font-size: x-large;
+}
+
+button {
+    margin-left: 37.5%;
+    margin-top: 2%;
+    height: 15vh;
+    width: 25%;
+    background-color: darkblue;
+    border: 1vmin solid whitesmoke;
+    border-radius: 15px;
+    color: whitesmoke;
 }
