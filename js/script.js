@@ -32,15 +32,17 @@ if (slot1 === 1 || slot2 === 1 || slot3 === 1) {
 spinBtn.addEventListener('click', handleClick);
 
 /*------functions-----*/
-
+//declares all of the actions that need to happen when button is clicked for a clean game
 async function handleClick() {
     winner = null;
+    spinBtn.removeEventListener('click', handleClick);
     await spin();
     checkWinner();
+    spinBtn.addEventListener('click', handleClick);
     render();
 }
 
-// spin reiterates the random function for each slot
+// spin reiterates the random function for each slot 20 times in 0.1 sec
 async function spin() {
     return await new Promise(function(res) {
         let count = 0;
@@ -56,16 +58,7 @@ async function spin() {
             }
         }, 100);
     });
-}
 
-
-function win() {
-    if (winner) {
-        spinBtn.removeEventListener('click', spin);
-        setTimeout(function(){
-            spinBtn.addEventListener('click', spin);
-        }, 500);
-    }
 }
 
 // declare random int for slot variables 
@@ -81,7 +74,7 @@ function render() {
     renderMsg();
 }
 
-// renders msg using boolean function
+// renders a message onto the DOM
 function renderMsg() {
     // when you get three matching symbols the message will read "Winner!"
     if (winner) {
@@ -94,26 +87,18 @@ function renderMsg() {
         document.querySelector('h4').style.color = 'red';
         document.querySelector('h4').style.fontSize = 'large';
     } else {
-     // while the reels are spinning message
+    // while the reels are spinning message
      document.querySelector('h4').innerText = 'Lets Go!'
+     document.querySelector('h4').style.color = 'lightblue';
+     document.querySelector('h4').style.fontSize = 'x-large';
     }
 }
 
-
+//assign boolean to state variables 
 function checkWinner() {
-    // when you get three matching symbols the message will read "Winner!"
     if (slot1 === slot2 && slot2 === slot3) {
         winner = true;
-    // when three symbols don't match the message will read "Spin Again!"
     } else {
         winner = false;
     }
 }
-
-
-// if (slot1 === 3) {
-//     document.querySelector('h4').innerText = '3!';
-// } else if (slot1 !== 3) {
-//     document.querySelector('h4').innerText = 'Spin Again!';
-// }
-
