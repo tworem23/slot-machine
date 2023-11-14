@@ -4,8 +4,13 @@ let slot1;
 let slot2;
 let slot3;
 
+
+const smileyEmoji = String.fromCodePoint(0x1F603);
+
+//variable for a boolean function 
 let winner;
 
+//a variable used for animation of the spin function
 let spinInterval;
 
 /*-----cached elements----*/
@@ -15,17 +20,6 @@ let spinBtn = document.querySelector('button');
 //assign msg variable before game starts
 let msg = document.querySelector('h4').innerText = 'Spin!';
 document.querySelector('h4').style.color = 'lightgreen';
-
-// assign each int to a img/symbol
-if (slot1 === 1 || slot2 === 1 || slot3 === 1) {
-    document.querySelectorAll('div') = document.getElementById()
-}else if (slot1 === 2 || slot2 === 2 || slot3 === 2) {
-    document.querySelectorAll('div') = document.getElementById()
-} else if (slot1 === 3 || slot2 === 3 || slot3 === 3) {
-    document.querySelectorAll('div') = document.getElementById()
-}
-
-
 
 /*----event listener----*/
 //click the button to spin again 
@@ -42,7 +36,7 @@ async function handleClick() {
     render();
 }
 
-// spin reiterates the random function for each slot 20 times in 0.1 sec
+// spin reiterates the random function for each slot 15 times in 0.1 sec
 async function spin() {
     return await new Promise(function(res) {
         let count = 0;
@@ -52,13 +46,13 @@ async function spin() {
             slot3 = createInt();
             render();
             count++;
-            if (count === 20) {
+            if (count === 15) {
                 clearInterval(spinInterval);
                 res('');
             }
         }, 100);
     });
-
+    
 }
 
 // declare random int for slot variables 
@@ -68,10 +62,33 @@ function createInt() {
 
 // assigns the random states and message to the DOM 
 function render() {
-    document.getElementById('slot1').innerText = slot1;
-    document.getElementById('slot2').innerText = slot2;
-    document.getElementById('slot3').innerText = slot3;
     renderMsg();
+    renderImg();
+}
+
+// assign each int to a img/symbol
+function renderImg() {
+    if (slot1 === 1) {
+        document.getElementById('slot1').innerText = '😊';
+    } else if (slot1 === 2) {
+        document.getElementById('slot1').innerText = '🤣';
+    } else if (slot1 === 3) {
+        document.getElementById('slot1').innerText = '❤️';
+    }
+    if (slot2 === 1) {
+        document.getElementById('slot2').innerText = '😊';
+    } else if (slot2 === 2) {
+        document.getElementById('slot2').innerText = '🤣';
+    } else if (slot2 === 3) {
+        document.getElementById('slot2').innerText = '❤️';
+    }
+    if (slot3 === 1) {
+        document.getElementById('slot3').innerText = '😊';
+    } else if (slot3 === 2) {
+        document.getElementById('slot3').innerText = '🤣';
+    } else if (slot3 === 3) {
+        document.getElementById('slot3').innerText = '❤️';
+    }
 }
 
 // renders a message onto the DOM
