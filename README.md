@@ -7,6 +7,6 @@ This slot machine toy I have created employs basic JavaScript strategies that de
 
 Here you will see a spin button which you can click everytime a win or loss has been declared. When you get three like Emojis you will be declared a Winner!
 
-(https://tworem23.github.io/slot-machine/)
+Lets try it out! --> https://tworem23.github.io/slot-machine/
 
 The only thing missing would be some confetti or coins flashing on the screen when the win is declared. I would also like to add the spacebar to the event listener.
